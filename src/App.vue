@@ -10,6 +10,7 @@ import router from './router/index';
 @import "~@/assets/style/helper.scss";
 body{
   font-family: $font-hei;
+  font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
