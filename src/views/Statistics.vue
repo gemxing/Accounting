@@ -1,8 +1,7 @@
 <template>
-    <div>
-        Statistics
-        <Nav/>
-    </div>
+        <Layout>
+            <p>Statistics</p>
+        </Layout>
 </template>
 
 <script lang="ts">
@@ -12,7 +11,3 @@
         name: 'Statistics'
     })
 </script>
-
-<style scoped>
-
-</style>
