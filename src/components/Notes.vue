@@ -1,16 +1,19 @@
 <template>
     <label class="notes">
-        <span class="name">备注</span>
-        <input type="text" placeholder="在这里输入备注内容">
+        <span class="name">备注</span>  
+        <!-- <input type="text" :value="value" @input="onInput" placeholder="在这里输入备注内容"> -->
+        <input type="text" v-model="value" placeholder="在这里输入备注内容">
     </label>
 </template>
 
 <script lang="ts">
     import Vue from 'vue'
+    import { Component } from 'vue-property-decorator';
 
-    export default Vue.extend({
-        name:'Notes'
-    })
+    @Component
+    export default class Notes extends Vue{
+        value = '';
+    }
 </script>
 
 <style lang="scss" scoped>
