@@ -14,8 +14,12 @@
     import Notes from '@/components/Notes.vue'
     import Tags from '@/components/Tags.vue'
     import {Component, Watch} from 'vue-property-decorator';
+    // import model from '@/model.js';//js写法
+    const model = require('@/model.js').model;
+    console.log(model);
+    
 
-    const recordList: Record[] = JSON.parse(window.localStorage.getItem('recordList') || '[]');//保存操作记录，方便统计
+    const recordList: Record[] = model.fetch();
 
     type Record = {
     tags: string[];
