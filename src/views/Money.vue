@@ -39,6 +39,7 @@
     onUpdateNotes(value: string) {
       this.record.notes = value;
     }
+    //保存该页面的数据操作，把record的复制保存到list
     saveRecord() {
       const record2: Record = JSON.parse(JSON.stringify(this.record));
       record2.createdAt = new Date();
