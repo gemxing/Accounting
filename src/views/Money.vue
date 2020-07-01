@@ -15,14 +15,15 @@
     import Tags from '@/components/Tags.vue'
     import {Component, Watch} from 'vue-property-decorator';
 
-    const recordList: Record[] = JSON.parse(window.localStorage.getItem('recordList') || '[]');
+    const recordList: Record[] = JSON.parse(window.localStorage.getItem('recordList') || '[]');//保存操作记录，方便统计
 
     type Record = {
     tags: string[];
     notes: string;
     type: string;
     amount: number; // 数据类型 object | string
-    createdAt?: Date;  // 类 / 构造函数
+    //添加created字段
+    createdAt?: Date;  // 类 / 构造函数，这句代码跟createdAt:Data | undefined
   }
     @Component({
     components: {Tags, Notes, Types, NumberPad}
