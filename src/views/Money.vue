@@ -20,7 +20,7 @@
     import tagListModel from '@/models/tagListModel.ts';
 
     const recordList = recordListModel.fetch();
-    const tagList = tagListModel.fetch;
+    const tagList = tagListModel.fetch();
 
     type RecordItem = {
     tags: string[];
