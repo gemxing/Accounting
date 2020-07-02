@@ -47,13 +47,11 @@
     }
     //保存该页面的数据操作，把record的复制保存到list
     saveRecord() {
-      const record2: RecordItem = recordListModel.clone(this.record);
-      record2.createdAt = new Date();
-      this.recordList.push(record2);
+      recordListModel.create(this.record);
     }
     @Watch('recordList')
     onRecordListChange() {
-      recordListModel.save(this.recordList);
+      recordListModel.save();
     }
   }
 </script>
