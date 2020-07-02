@@ -17,6 +17,15 @@ Vue.component('Icon',Icon)
 
 window.tagList = tagListModel.fetch();
 
+window.createTag = (name: string)=>{
+  const message = tagListModel.create(name);
+  if(message === 'duplicated'){
+    window.alert('标签已存在!');
+  }else if(message === 'success'){
+    window.alert('新的标签已添加成功!')
+}
+}
+
 new Vue({
   router,
   store,
