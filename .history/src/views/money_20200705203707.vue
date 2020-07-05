@@ -32,7 +32,7 @@ import recordTypeList from '@/constants/RecordTypeList';
   components: { Tags, FormItem, Types, NumberPad, Tabs },
 })
 export default class Money extends Vue {
-  recordTypeList = recordTypeList;
+  recordTypeList = recordTypeList
   get recordList(){
     return this.$store.state.recordList;
   }

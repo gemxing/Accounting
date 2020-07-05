@@ -18,7 +18,6 @@ import FormItem from "@/components/Money/FormItem.vue";
 import Tags from "@/components/Money/Tags.vue";
 import { Component } from "vue-property-decorator";
 import Tabs from '@/components/Tabs.vue';
-import recordTypeList from '@/constants/RecordTypeList';
 
 // type RecordItem = {
 //   tags: string[];
@@ -32,7 +31,6 @@ import recordTypeList from '@/constants/RecordTypeList';
   components: { Tags, FormItem, Types, NumberPad, Tabs },
 })
 export default class Money extends Vue {
-  recordTypeList = recordTypeList;
   get recordList(){
     return this.$store.state.recordList;
   }

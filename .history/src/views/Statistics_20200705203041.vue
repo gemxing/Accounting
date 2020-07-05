@@ -24,7 +24,7 @@
     import Component from 'vue-class-component';
     import Tabs from '@/components/Tabs.vue';
     import intervalList from '@/constants/intervalList';
-    import recordTypeList from '@/constants/RecordTypeList';
+    import recordTypeList from '@/constants/typeList';
     @Component({
         components: {Types,Tabs},
     })

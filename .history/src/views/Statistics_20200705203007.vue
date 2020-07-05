@@ -1,6 +1,6 @@
 <template>
         <Layout>
-            <Tabs class-prefix="type" :data-source="recordTypeList" :value.sync="type"/>
+            <Tabs class-prefix="type" :data-source="typeList" :value.sync="type"/>
             <Tabs class-prefix="interval" :data-source="intervalList" :value.sync="interval"/>
             
         </Layout>      
@@ -24,7 +24,7 @@
     import Component from 'vue-class-component';
     import Tabs from '@/components/Tabs.vue';
     import intervalList from '@/constants/intervalList';
-    import recordTypeList from '@/constants/RecordTypeList';
+    import recordTypeList from '@/constants/typeList';
     @Component({
         components: {Types,Tabs},
     })
@@ -32,7 +32,7 @@
         type = '';
         intervalList = intervalList;
         interval = 'day';
-        recordTypeList = recordTypeList;
+        typeList = recordTypeList;
     }
 </script>
 
