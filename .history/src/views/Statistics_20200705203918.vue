@@ -28,7 +28,7 @@
         components: {Tabs},
     })
     export default class Statistics extends Vue {
-        type = '-';
+        type = '';
         intervalList = intervalList;
         interval = 'day';
         recordTypeList = recordTypeList;
