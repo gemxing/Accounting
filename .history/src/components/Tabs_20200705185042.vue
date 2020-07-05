@@ -1,0 +1,21 @@
+<template>
+        <ul class="types">
+         <li></li>
+        </ul>
+</template>
+
+<script lang="ts">
+    import Vue from 'vue'
+    import {Component, Prop} from 'vue-property-decorator'
+
+    @Component
+    export default class Tabs extends Vue{
+        @Prop({required: true,type:Array}) dataSource!: {text: string, value: string}[];
+        @Prop(String) readonly value!: string;
+        @Prop(String) classPrefix?: string;
+    }
+</script>
+
+<style scoped>
+
+</style>

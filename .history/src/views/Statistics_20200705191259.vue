@@ -1,13 +1,12 @@
 <template>
         <Layout>
-            <Tabs class-prefix="type" :data-source="typeList" :value.sync="type"/>
-            <Tabs class-prefix="interval" :data-source="intervalList" :value.sync="interval"/>
-            
+            <Tabs class :data-source="array2" :value.sync="yyy"/>
+            <Tabs :data-source="array" :value.sync="hhh"/>
         </Layout>      
 </template>
 
 <style lang="scss" scoped >
-    ::v-deep .type-tabs-item{
+    ::v-deep .zzz-item{
         background: white;
         &.selected{
             background: #c4c4c4;
@@ -23,14 +22,15 @@
     import Vue from 'vue';
     import Component from 'vue-class-component';
     import Tabs from '@/components/Tabs.vue';
+import class from '../../.history/src/components/Tabs_20200705184548.vue';
     @Component({
         components: {Types,Tabs},
     })
     export default class Statistics extends Vue {
-        type = ''
-        intervalList = [{text:'按天',value:'day'},{text:'按周',value:'week'},{text:'按月',value:'month'},]
-        interval = 'day'
-        typeList = [
+        yyy = ''
+        array = [{text:'按天',value:'day'},{text:'按周',value:'week'},{text:'按月',value:'month'},]
+        hhh = 'day'
+        array2 = [
             {text:'支出',value:'-'},
             {text:'收入',value:'+'}
         ]

@@ -1,13 +1,12 @@
 <template>
         <Layout>
-            <Tabs class-prefix="type" :data-source="typeList" :value.sync="type"/>
-            <Tabs class-prefix="interval" :data-source="intervalList" :value.sync="interval"/>
-            
+            <Types class-prefix='zzz' :value.sync="yyy"/>
+            <Tabs :data-source="array" />
         </Layout>      
 </template>
 
 <style lang="scss" scoped >
-    ::v-deep .type-tabs-item{
+    ::v-deep .zzz-item{
         background: white;
         &.selected{
             background: #c4c4c4;
@@ -27,13 +26,8 @@
         components: {Types,Tabs},
     })
     export default class Statistics extends Vue {
-        type = ''
-        intervalList = [{text:'按天',value:'day'},{text:'按周',value:'week'},{text:'按月',value:'month'},]
-        interval = 'day'
-        typeList = [
-            {text:'支出',value:'-'},
-            {text:'收入',value:'+'}
-        ]
+        yyy = '';
+        array = [{text:''}]
     }
 </script>
 

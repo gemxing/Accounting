@@ -1,8 +1,8 @@
 <template>
     <div>
         <ul class="types">
-         <li :class="{[classPrefix+'-item']: classPrefix, selected: value==='-'}" @click="selectType('-')">支出</li>
-         <li :class="{[classPrefix+'-item']: classPrefix, selected: value==='+'}" @click="selectType('+')">收入</li>
+         <li :class="value === '-' && 'selected'" @click="selectType('-')">支出</li>
+         <li :class="value === '+' && 'selected'" @click="selectType('+')">收入</li>
         </ul>
     </div>
 </template>
@@ -24,6 +24,7 @@
     }
     // js组件写法
     // import Vue from 'vue'
+import class from '../../../.history/src/views/Statistics_20200705182851.vue';
     // export default Vue.extend({
     //     name:'Types',
     //     data(){

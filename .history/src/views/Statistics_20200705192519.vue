@@ -1,8 +1,7 @@
 <template>
         <Layout>
-            <Tabs class-prefix="type" :data-source="typeList" :value.sync="type"/>
-            <Tabs class-prefix="interval" :data-source="intervalList" :value.sync="interval"/>
-            
+            <Tabs class-prefix="type" :data-source="array2" :value.sync="type"/>
+            <Tabs class-prefix="interval" :data-source="array" :value.sync="interval"/>
         </Layout>      
 </template>
 
@@ -28,9 +27,9 @@
     })
     export default class Statistics extends Vue {
         type = ''
-        intervalList = [{text:'按天',value:'day'},{text:'按周',value:'week'},{text:'按月',value:'month'},]
-        interval = 'day'
-        typeList = [
+        array = [{text:'按天',value:'day'},{text:'按周',value:'week'},{text:'按月',value:'month'},]
+        hhh = 'day'
+        array2 = [
             {text:'支出',value:'-'},
             {text:'收入',value:'+'}
         ]
