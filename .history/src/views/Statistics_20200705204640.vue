@@ -16,7 +16,7 @@
             }           
       }
     }
-    ::v-deep .interval-tabs-item{
+    ::v-deep li.interval-tabs-item{
         height: 48px;
     }
 </style>
