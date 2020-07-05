@@ -7,41 +7,14 @@ import store from './store'
 import Nav from './components/Nav.vue';
 import Layout from './components/Layout.vue'
 import Icon from './components/Icon.vue'
-import tagListModel from '@/models/tagListModel.ts';
-import recordListModel from '@/models/recordListModel.ts';
 
 Vue.config.productionTip = false
 
-Vue.component('Nav',Nav)
-Vue.component('Layout',Layout)
-Vue.component('Icon',Icon)
+Vue.component('Nav', Nav)
+Vue.component('Layout', Layout)
+Vue.component('Icon', Icon)
 
-//record store
-window.recordList = recordListModel.fetch();
-window.createRecord = (record: RecordItem)=>recordListModel.create(record);
-//tag store
-window.tagList = tagListModel.fetch();
-window.createTag = (name: string)=>{
-  const message = tagListModel.create(name);
-  if(message === 'duplicated'){
-    window.alert('标签已存在!');
-  }else if(message === 'success'){
-    window.alert('新的标签已添加成功!')
-  }
-}
-window.removeTag = (id: string)=>{
-  if(tagListModel.remove(id)){
-    return true;
-  }else{
-    return false;
-  }
-}
-window.updateTag = (id: string,name: string)=>{
-  return tagListModel.update(id,name);
-}
-window.findTag = (id: string)=>{
-  return window.tagList.filter(t=> t.id === id)[0];
-}
+
 
 new Vue({
   router,
