@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component'
 
 const map: {[key: string]: string } = {
-    'tag name duplicated' : '标签名重复了'//表驱动编程
+    'tag name duplicated' : '标签名重复了'//表驱动
 };
 
 @Component

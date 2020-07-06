@@ -56,7 +56,7 @@ const store = new Vuex.Store({
       }
     },
     createTag(state,name: string) {
-      state.createTagError = null;
+      state.tagList = 
       const names = state.tagList.map(item => item.name);
       if (names.indexOf(name) >= 0) {
         state.createTagError = new Error('tag name duplicated')
