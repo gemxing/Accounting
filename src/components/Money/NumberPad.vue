@@ -56,6 +56,10 @@
         }
         ok() {
             const number = parseFloat(this.output)
+            if(number === 0){
+                window.alert('请输入金额');
+                return;
+            }
             this.$emit('update:value', number);//统计需要数字，不是字符串
             this.$emit('submit', number);
             this.output = '0';

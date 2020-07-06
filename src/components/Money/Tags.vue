@@ -1,7 +1,7 @@
 <template>
   <div class="tags">
     <div class="new">
-      <button @click="createTag">新增标签</button>
+      <button @click="create">新增标签</button>
     </div>
     <ul class="current">
       <li
@@ -36,6 +36,11 @@ export default class Tags extends mixins(TagHelper) {
       this.selectedTags.push(tag);
     }
     this.$emit("update:value", this.selectedTags);
+  }
+  create(){
+    const name = window.prompt('请输入标签名');
+    if(!name){return;}
+    this.$store.commit('createTag',name);
   }
 }
 </script>

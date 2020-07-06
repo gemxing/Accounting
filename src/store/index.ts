@@ -15,11 +15,11 @@ const store = new Vuex.Store({
       createRecordError:null,
       createTagError: null,
   } as RootState,
-  mutations:{//改动//相当于methods
-    setCurrentTag(state, id:string){
+  mutations:{     //改动//相当于methods
+    setCurrentTag(state, id: string){
       state.currentTag = state.tagList.filter(t => t.id === id)[0];
     },
-    updateTag(state, payload: {id: string, name: string}) {
+    updateTag(state, payload: {id: string; name: string}) {
       const {id,name} = payload;
       const idList = state.tagList.map(item => item.id);
       if (idList.indexOf(id) >= 0) {
@@ -36,7 +36,7 @@ const store = new Vuex.Store({
     fetchRecords(state) {
       state.recordList = JSON.parse(window.localStorage.getItem('recordList') || '[]') as RecordItem[];
     },
-    createRecord(state,record){
+    createRecord(state, record){
       const record2: RecordItem = clone(record);
       record2.createdAt = new Date().toISOString();
       state.recordList.push(record2);
@@ -55,7 +55,7 @@ const store = new Vuex.Store({
         store.commit('createTag','行')
       }
     },
-    createTag(state,name: string) {
+    createTag(state, name: string) {
       state.createTagError = null;
       const names = state.tagList.map(item => item.name);
       if (names.indexOf(name) >= 0) {
@@ -66,7 +66,7 @@ const store = new Vuex.Store({
       state.tagList.push({id, name: name});
       store.commit('saveTags');
     },
-    removeTag(state,id: string) {
+    removeTag(state, id: string) {
       let index = -1;
       for (let i = 0; i < state.tagList.length; i++) {
         if (state.tagList[i].id === id) {

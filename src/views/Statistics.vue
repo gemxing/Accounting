@@ -5,7 +5,7 @@
       <ol v-if="groupedList.length>0">
         <li v-for="(group, index) in groupedList" :key="index">
           <h3 class="title">{{beautify(group.title)}}
-              <span>￥{{group.total}}</span>
+              <span>总计￥{{group.total}}</span>
           </h3>
           <ol>
             <li v-for="item in group.items" :key="item.id" class="record">
@@ -45,10 +45,14 @@
   align-content: center;
 }
 .title {
+  background:rgb(196, 196, 196);
+  border-radius: 0px 0px 8px 8px;
   @extend %item;
 }
 .record {
   background: white;
+  border-radius: 8px;
+  border:1px solid rgb(207, 207, 207);
   @extend %item;
 }
 .notes {
@@ -103,8 +107,8 @@ export default class Statistics extends Vue {
       .sort(
         (a, b) => dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf()
       );
-    if (recordList.length === 0) {
-      return [];
+    if (newList.length === 0) {
+      return [] as Result;
     }
     type Result = { title: string; total?: number; items: RecordItem[] }[];
     const result: Result = [
@@ -127,8 +131,6 @@ export default class Statistics extends Vue {
     }
     result.map(group => {
       group.total = group.items.reduce((sum, item) => {
-        console.log(sum);
-        console.log(item);
         return sum + item.amount;
       }, 0);
     });
