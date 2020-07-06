@@ -4,10 +4,9 @@
     <Tabs :data-source="recordTypeList"
           :value.sync="record.type"/>
     <div class="notes">
-      <FormItem field-name="备注" placeholder="在这里输入备注" 
-                :value.sync="record.notes"/>
+      <FormItem field-name="备注" placeholder="在这里输入备注" @update:value="onUpdateFormItem" />
     </div>
-    <Tags @update:value="record.tags = $event"/>
+    <Tags/>
   </Layout>
 </template>
 
@@ -19,6 +18,7 @@ import Tags from "@/components/Money/Tags.vue";
 import { Component } from "vue-property-decorator";
 import Tabs from '@/components/Tabs.vue';
 import recordTypeList from '@/constants/RecordTypeList';
+import store from '../../.history/src/store/index_20200706120725';
 
 // type RecordItem = {
 //   tags: string[];
@@ -45,18 +45,14 @@ export default class Money extends Vue {
   created(){
     this.$store.commit('fetchRecords')
   }
-  onUpdateNotes(value: string) {
+  onUpdateFormItem(value: string) {
     this.record.notes = value;
   }
   //保存该页面的数据操作，把record的复制保存到list
   saveRecord() {
-    if(!this.record.tags || this.record.tags.length === 0){
-      return window.alert('请至少选择一个标签');
-    }
     this.$store.commit('createRecord',this.record);
-    if(this.$store.state.createRecordError === null){
-      window.alert('已保存');
-    }
+    this.$store
+    window.alert('已保存');
   }
 }
 </script>

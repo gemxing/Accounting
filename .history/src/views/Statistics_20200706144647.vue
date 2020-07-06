@@ -58,7 +58,7 @@
 }
 .noResult{
     padding: 16px;
-    text-align: center;
+    text-
 }
 </style>
 

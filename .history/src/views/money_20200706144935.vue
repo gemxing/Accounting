@@ -4,8 +4,7 @@
     <Tabs :data-source="recordTypeList"
           :value.sync="record.type"/>
     <div class="notes">
-      <FormItem field-name="备注" placeholder="在这里输入备注" 
-                :value.sync="record.notes"/>
+      <FormItem field-name="备注" placeholder="在这里输入备注" @update:value="onUpdateFormItem" />
     </div>
     <Tags @update:value="record.tags = $event"/>
   </Layout>
@@ -45,7 +44,7 @@ export default class Money extends Vue {
   created(){
     this.$store.commit('fetchRecords')
   }
-  onUpdateNotes(value: string) {
+  onUpdateFormItem(value: string) {
     this.record.notes = value;
   }
   //保存该页面的数据操作，把record的复制保存到list

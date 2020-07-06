@@ -34,6 +34,12 @@ const store = new Vuex.Store({
     },
     fetchRecords(state) {
       state.recordList = JSON.parse(window.localStorage.getItem('recordList') || '[]') as RecordItem[];
+      if(!state.tagList || state.tagList.length === 0){
+        store.commit('createTag','衣');
+        store.commit('createTag','食');
+        store.commit('createTag','住');
+        store.commit('createTag','行')
+      }
     },
     createRecord(state,record){
       const record2: RecordItem = clone(record);

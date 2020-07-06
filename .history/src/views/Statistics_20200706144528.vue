@@ -16,7 +16,7 @@
           </ol>
         </li>
       </ol>
-      <div v-else class="noResult">
+      <div v-else>
           目前没有相关记录
       </div>
   </Layout>
@@ -55,10 +55,6 @@
   margin-right: auto;
   margin-left: 16px;
   color: #999;
-}
-.noResult{
-    padding: 16px;
-    text-align: center;
 }
 </style>
 

@@ -57,8 +57,7 @@
   color: #999;
 }
 .noResult{
-    padding: 16px;
-    text-align: center;
+    padding: ;
 }
 </style>
 
